@@ -1,0 +1,29 @@
+# Below script analyzes class data of the Lemna and Photosynthesis datasets. Datasets should be pre-loaded and pre-created before using the below code
+
+###### Lemna results
+
+# Plot data to see general trends
+plot(Ldf$salt, Ldf$total_t2)
+
+# Know that we are using count data, and that data follow a non-normal distribution, so will use a generalized linear model with a poisson distribution (as is used for count data)
+library(lme4)
+lemna_mod <- glm(total_t2 ~ salt, data = Ldf, family = poisson)
+
+# Get results
+summary(lemna_mod)
+
+# Looks like all treatments differ from each other significantly, let's do a post-hoc test to be sure by getting the estimated marginal means (What are our estimated means of the lemna count for each salt level)
+library(emmeans)
+lemna_emm <- emmeans(lemna_mod, "salt") # get means
+pairs(lemna_emm) # show comparisons of means
+
+# Plot the data with ggplot
+library(ggplot2)
+lemna_plot <- ggplot(Ldf, aes(x = salt, y = total_t2, fill = salt)) +
+              geom_bar(stat = "summary", fun = "mean") +
+              ylim(0, 500)
+lemna_plot <- lemna_plot + labs(title = "Lemna spp. growth after 2 weeks under varied salt levels", x = "Salt concentration in mg/mL", y = "Final thalli count")
+lemna_plot
+
+###### Photosynthesis results
+
