@@ -1,8 +1,5 @@
 # Code below is to be copied at the beginning of the R tutorial on Lemna and Photosynthesis Lab Results
 
-# Load in proper library
-library(tidyverse)
-
 # Generate Lemna dataset
 Ldf <- data.frame(
         salt = c(0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25),
