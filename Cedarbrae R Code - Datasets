@@ -1,0 +1,34 @@
+# Code below is top be copied at the beginning of the R tutorial on Lemna and Photosynthesis Lab Results
+
+# Load in proper libraries
+library(dplyr)
+library(effects)
+library(car)
+library(multcomp)
+library(lme4)
+library(sjPlot)
+library(tidyverse)
+library(ggplot2)
+library(emmeans)
+
+# Generate Lemna dataset
+Ldf <- data.frame(
+        salt = c(0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25),
+        total_t2 = c(436, 286, 44, 431, 282, 60, 387, 244, 54, 416, 242, 56, 438, 267, 50, 404, 227, 48))
+
+# Convert salt variable to a factor
+Ldf$salt <- as.factor(Ldf$salt)
+
+# Generate Photosynthesis dataset
+Pdf <- data.frame(
+        tube = c("control", "control", "control", "control", "control", "control", "experimental", "experimental", "experimental", "experimental", "experimental", "experimental", "experimental"),
+        time = c(5, 10, 15, 20, 25, 30, 5, 10, 15, 20, 25, 30),
+        photosynthetic_rate = (0.083333333, 0.065, 0.058888889, 0.055833333, 0.054666667, 0.054444443, 0.056666667, 0.048333333, 0.041111111, 0.039166667, 0.037333333, 0.036666667))
+
+# Convert tube and time variables to factors
+Pdf$tube <- as.factor(Pdf$tube)
+Pdf$time <- as.factor(Pdf$time)
+
+
+
+
