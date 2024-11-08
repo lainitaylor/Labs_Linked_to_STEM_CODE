@@ -1,0 +1,14 @@
+# Below code is to process results of Daphnia heartrates at hot vs cold water temperatures
+
+# First, let's build our summary dataset to graph
+df <- data.frame(temperature = c("room", "cold"), heartrate = c(33.4, 20.8))
+
+# Change temperature to factor
+df$temperature <- as.factor(df$temperature)
+
+# This plot is not so good looking, let's graph with ggplot to get something nicer
+library(ggplot2)
+plot <- ggplot(df, aes(x = temperature, y = heartrate, fill = temperature)) + geom_col() + labs(x="Water Temperature in Celsius", y = "Heart rate in bpm", title = "Daphnia spp. Heart Rate By Temperature") + theme_bw()
+
+plot  
+        
