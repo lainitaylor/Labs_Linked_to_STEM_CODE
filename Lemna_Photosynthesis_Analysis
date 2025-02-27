@@ -1,4 +1,4 @@
-# Below script analyzes class data of the Lemna and Photosynthesis datasets. Datasets should be pre-loaded and pre-created before using the below code
+ 3# Below script analyzes class data of the Lemna and Photosynthesis datasets. Datasets should be pre-loaded and pre-created before using the below code
 
 ###### Lemna results
 
@@ -37,7 +37,7 @@ t.test(photosynthetic_rate ~ tube, data = Pdf)
 # Plot the data with ggplot 
 library(ggplot2)
 photo_plot <- ggplot(Pdf, aes(x = time, y = photosynthetic_rate, colour = tube))+
-            geom_point(stat = "identity") +
+            geom_point(stat = "identity", size = 3) +
             ylim(0.01, 0.2)
-photo_plot <- photo_plot + labs(title = "Egeria photosynthetic rate every 5 minutes under normal vs high CO2 levels", x = "time", y = "Rate of Photosynthesis in mL/min")
+photo_plot <- photo_plot + labs(title = "Egeria photosynthetic rate every 5 minutes under normal vs high CO2 levels", x = "Time", y = "Rate of Photosynthesis in mL/min")
 photo_plot
