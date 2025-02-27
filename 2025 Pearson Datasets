@@ -1,0 +1,19 @@
+# Below is the code for Pearson Collegiate's Lemna and Photosynthesis Data 
+
+# First, let's create a dataframe of our Lemna count data
+Ldf <- data.frame(
+        salt = c(0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25, 0, 6.25, 25),
+        total_t2 = c(211, 532, 95, 140, 216, 104, 295, 379, 115, 322, 323, 166, 177, 248, 130, 163, 438, 103))
+
+# Convert salt variable to a factor
+Ldf$salt <- as.factor(Ldf$salt)
+
+# Generate Photosynthesis dataset
+Pdf <- data.frame(
+        tube = c("control", "control", "control", "control", "control", "control", "experimental", "experimental", "experimental", "experimental", "experimental", "experimental"),
+        time = c(5, 10, 15, 20, 25, 30, 5, 10, 15, 20, 25, 30),
+        photosynthetic_rate = c(0.05667, 0.048333, 0.045556, 0.044167, 0.042333, 0.041667, 0.173333, 0.15, 0.143333, 0.1375, 0.132667, 0.13))
+
+# Convert tube and time variables to factors
+Pdf$tube <- as.factor(Pdf$tube)
+Pdf$time <- as.factor(Pdf$time)
