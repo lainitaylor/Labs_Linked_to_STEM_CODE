@@ -1,4 +1,4 @@
-# Below is the code for Pearson Collegiate's Lemna and Photosynthesis Data 
+# Below is the code for our Lemna and Photosynthesis Data 
 
 # First, let's create a dataframe of our Lemna count data
 Ldf <- data.frame(
