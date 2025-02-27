@@ -38,6 +38,6 @@ t.test(photosynthetic_rate ~ tube, data = Pdf)
 library(ggplot2)
 photo_plot <- ggplot(Pdf, aes(x = time, y = photosynthetic_rate, colour = tube))+
             geom_point(stat = "identity") +
-            ylim(0.01, 0.1)
+            ylim(0.01, 0.2)
 photo_plot <- photo_plot + labs(title = "Egeria photosynthetic rate every 5 minutes under normal vs high CO2 levels", x = "time", y = "Rate of Photosynthesis in mL/min")
 photo_plot
