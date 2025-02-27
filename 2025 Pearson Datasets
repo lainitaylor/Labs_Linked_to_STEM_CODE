@@ -1,4 +1,4 @@
-# Below is the code for our Lemna and Photosynthesis Data 
+# Below is the code for our Lemna and Photosynthesis Data; Code must be copy-pasted into Snippets 
 
 # First, let's create a dataframe of our Lemna count data
 Ldf <- data.frame(
