@@ -10,4 +10,5 @@ df$temperature <- as.factor(df$temperature)
 library(ggplot2)
 plot <- ggplot(df, aes(x = temperature, y = heartrate, fill = temperature)) + geom_col() + labs(x="Water Temperature in Celsius", y = "Heart rate in bpm", title = "Daphnia spp. Heart Rate By Temperature") + theme_bw() + scale_fill_manual(values = c("blue", "red"))
 
+# Have R show us the output plot
 plot
